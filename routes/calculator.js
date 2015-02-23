@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 	//identify the method and perform the equivalent math calculation
 	
 	//initialize the variable
-	var c, usageerr;
+	var c;
 	
 	switch(method) {
 		case 'add':
@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
 			c = x * y;
 			break;
 		case 'divide':
-			c = x / y;
+			c = (x / y).toFixed(2);
 			break;
 	}
 	res.render('calculator', { title: 'Welcome to Assignment 1', Method: method, result: c} );
